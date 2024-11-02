@@ -1,5 +1,7 @@
 package com.example.parcial.ui.components
 
+import androidx.compose.material3.Typography
+import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -15,13 +17,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.parcial.R
-
 
 
 @Composable
@@ -29,11 +29,16 @@ fun BotonClick(
     texto: String
 ) {
 
-    val textoPersonalizado = TextStyle(
-        fontFamily = FontFamily.SansSerif,
-        fontSize = 16.sp,
-        fontWeight = FontWeight.Bold,
-        lineHeight = 19.6.sp
+    val manropeBold = FontFamily(
+        Font(R.font.manrope_bold)
+    )
+
+    val typography = Typography(
+        bodyLarge = TextStyle(
+            fontFamily = manropeBold,
+            fontSize = 16.sp,
+            lineHeight = 19.6.sp
+        )
     )
 
     Row(
@@ -51,7 +56,7 @@ fun BotonClick(
     ) {
         Text(
             text = texto,
-            style = textoPersonalizado,
+            style = typography.bodyLarge,
             modifier = Modifier
                 .padding(start = 12.dp)
 
